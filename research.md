@@ -4,4 +4,4 @@ title: Research
 permalink: /research/
 ---
 
-About my research.
+Work in progress.

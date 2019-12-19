@@ -4,4 +4,4 @@ title: Music
 permalink: /music/
 ---
 
-About my music.
+Work in progress.
