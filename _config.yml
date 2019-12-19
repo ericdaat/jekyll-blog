@@ -19,15 +19,19 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Eric Daoud, data scientist
-email: your-email@example.com
+email: ericda [at] outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Data Scientist and Full Stack Developer with additional Data Engineering
+  and DevOps skills.
+  I am currently pursuing a PhD in Machine Learning applied to medicine at
+  the Curie Institute of Research in Paris, France.
+  Besides work, I am really keen on music, photography, karate and golf.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ericdaoud
 github_username:  ericdaat
+linkedin_username: ericdaoud
+youtube_username: ericmusic13
 
 # Build settings
 theme: minima
