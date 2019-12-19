@@ -26,8 +26,10 @@ description: >- # this means to ignore newlines until "baseurl:"
   I am currently pursuing a PhD in Machine Learning applied to medicine at
   the Curie Institute of Research in Paris, France.
   Besides work, I am really keen on music, photography, karate and golf.
+show_excerpts: True
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
 twitter_username: ericdaoud
 github_username:  ericdaat
 linkedin_username: ericdaoud
