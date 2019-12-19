@@ -41,6 +41,8 @@ github_username:  ericdaat
 linkedin_username: ericdaoud
 youtube_username: ericmusic13
 
+google_analytics: UA-105599779-4
+
 # Build settings
 theme: minima
 plugins:
