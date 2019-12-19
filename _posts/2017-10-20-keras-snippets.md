@@ -8,7 +8,6 @@ excerpt:
 
 I started to use Keras for Deep Learning months ago, and as I was using it, I thought I should make a memo of all the cool features and network architectures I was using. This post aims at sharing some snippets I have found useful, so I can reuse them later. Maybe it will be useful to you as well !
 
-
 ## Networks example
 
 Let's start with some networks example. Those are really similar to the examples you'd find in the [Keras Docs](https://keras.io/getting-started/sequential-model-guide/), but I added a few things here and there to better understand what they do.
@@ -37,7 +36,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![regression](/keras_nn/regression.png)
+![regression](/assets/img/keras_nn/regression.png)
 
 
 ### Binary Classification
@@ -64,8 +63,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![binary](/keras_nn/binary_classifier.png)
-
+![binary](/assets/img/keras_nn/binary_classifier.png)
 
 ### Multiclass Classification
 
@@ -94,8 +92,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![multiclass](/keras_nn/multiclass_classifier.png)
-
+![multiclass](/assets/img/keras_nn/multiclass_classifier.png)
 
 ### Embeddings
 
@@ -128,11 +125,9 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![embeddings](/keras_nn/embeddings_classifier.png)
-
+![embeddings](/assets/img/keras_nn/embeddings_classifier.png)
 
 ### Embeddings with the functional API
-
 
 ``` python
 from keras.models import Model
@@ -161,8 +156,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![embeddings_functional](/keras_nn/embeddings_classifier_functional.png)
-
+![embeddings_functional](/assets/img/keras_nn/embeddings_classifier_functional.png)
 
 ### Handling multiple inputs
 
@@ -203,8 +197,7 @@ model.predict([np.random.rand(1, 10),
                np.random.rand(1, 10)])
 ```
 
-![embeddings_functional](/keras_nn/multi_embeddings_classifier_functional.png)
-
+![embeddings_functional](/assets/img/keras_nn/multi_embeddings_classifier_functional.png)
 
 ### Shared Embeddings
 
@@ -242,8 +235,7 @@ model.compile('sgd', 'sparse_categorical_crossentropy')
 plot_model(model, to_file='shared_embeddings_averaged_dot.png', show_shapes=True)
 ```
 
-![shared_embeddings](/keras_nn/shared_embeddings.png)
-
+![shared_embeddings](/assets/img/keras_nn/shared_embeddings.png)
 
 ## Callbacks
 

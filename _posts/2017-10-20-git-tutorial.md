@@ -13,10 +13,12 @@ with other kernel developers contributing to its initial development.
 Its current maintainer since 2005 is Junio Hamano.
 
 The name "git" was given by Linus Torvalds when he wrote the very first version. He described the tool as "the stupid content tracker" and the name as (depending on your way):
+
  1. random three-letter combination that is pronounceable, and not actually used by any common UNIX command. The fact that it is a mispronunciation of "get" may or may not be relevant.
  2. stupid. contemptible and despicable. simple. Take your pick from the dictionary of slang.
  3. "global information tracker": you're in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.
  4. "g*dd*mn idiotic truckload of sh*t": when it breaks
+
 *Source: [Wikipedia](https://en.wikipedia.org/wiki/Git)*
 
 ## First Steps
@@ -54,10 +56,12 @@ touch hi.py
 ```
 
 So far we have:
+
  1. A local git repository
  2. A `hi.py` file that is not being tracked
 
 What we need to do:
+
  1. Tell git to track the file
  2. Create a remote repository to store our code
  3. Push our code to the remote repository
@@ -123,7 +127,7 @@ git checkout hi.py
 
 ### A visual recap
 
-![git_basic_usage](/git-stages.png)
+![git_basic_usage](/assets/img/git-stages.png)
 
 *Source: [marklodato.github.io](https://marklodato.github.io/visual-git-guide/index-en.html)*
 
@@ -135,7 +139,7 @@ git checkout hi.py
 
 Co-workers work on the same project and can edit the same files simultaneously. Updates are pushed on the distant repository, and pulled from the production server.
 
-<img src="git-servers.png" height="180px"/>
+![git_servers](/assets/img/git-servers.png)
 
 NEVER EVER commit, push or edit anything on the production server.
 
@@ -143,8 +147,7 @@ NEVER EVER commit, push or edit anything on the production server.
 
 Branches allow people to work on separate tasks without messing with the master branch code. It is useful to experiment, or add functionalities. Branches can start from the master branch, or from another branch.
 
-<img src="git-branches.png"
-     height="250px">
+![git_branches](/assets/img/git-branches.png)
 
 *Source : [backlogtool.com](https://backlogtool.com/git-tutorial/en/stepup/stepup1_5.html)*
 

@@ -10,27 +10,26 @@ As a big fan of Classic Rock living in France, I am very frustrated by the lack 
 
 So far, I am able to:
 
- - Scrap KSHE's web page, and get a list of 10 songs they've played
- - Find the songs on Spotify thanks to their web API
- - Upload them to a playlist I created, making sure there is no duplicate
+* Scrap KSHE's web page, and get a list of 10 songs they've played
+* Find the songs on Spotify thanks to their web API
+* Upload them to a playlist I created, making sure there is no duplicate
 
 My next steps include:
 
- - Automate this with a cron (or use something smarter like [Airflow](https://airflow.incubator.apache.org/)) so the playlist keeps getting updated
- - Pull some stats about what's playing, and when, trying to predict the next song, or mood, who knows what ...
+* Automate this with a cron (or use something smarter like [Airflow](https://airflow.incubator.apache.org/)) so the playlist keeps getting updated
+* Pull some stats about what's playing, and when, trying to predict the next song, or mood, who knows what ...
 
 Feel free to ping me if you want to help. You can have a look at the code on my [Github repository](https://github.com/ericdaat/kshe-to-spotify).
-
 
 ## Scraping KSHE 95 song history
 
 If you visit [KSHE 95 song history page](http://player.listenlive.co/20101/en/songhistory), you'll find a list of the 10 previously played songs.
 
-<img src="/kshe-song-history.png"/>
+![alt](/assets/img/kshe-song-history.png)
 
 By inspecting the page using your favorite browser, you should see the list of these songs within a Javascript variable.
 
-<img src="/kshe-song-history-source.png"/>
+![alt](/assets/img/kshe-song-history-source.png)
 
 I am very new to webscraping, but Python libraries like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) make this really easy and straightforward. I just had to write the following lines to get the song list I wanted.
 
@@ -114,24 +113,23 @@ This would return a json that looks like the following.
 
 During this part, we are going to use the [Spotify Web API](https://developer.spotify.com/web-api/). I found the API very straightforward and easy to deal with. The documentation is clear and they show a lot of examples that help. You will need to setup a Developer account and register an Application. This will provide you credentials that you will need for the rest of this post.
 
-
 ### Authorization
 
 I had some trouble figuring this part at first, but it's not that big of a deal once you understand the logic behind it. The [Spotify documentation](https://developer.spotify.com/web-api/authorization-guide/) explains it really well, but I will do a little recap here. There is basically three ways you can authenticate, which will give you an access token you will send within your HTTP requests. I only tried two out of three:
 
- - Authorization Code Flow: will give you a user access token that will enable you to retrieve some personal informations, as well as modifying your playlists, library, etc ...
- - Client Credentials: will only let you retrieve public informations about artists, tracks, albums, but nothing involving user's data.
+* Authorization Code Flow: will give you a user access token that will enable you to retrieve some personal informations, as well as modifying your playlists, library, etc ...
+* Client Credentials: will only let you retrieve public informations about artists, tracks, albums, but nothing involving user's data.
 
 For our purpose, we will need *Authorization Code Flow* because we want to modify our own playlist. Let's see how we do this. The following picture taken from Spotify documentation explains it well how the authorization code flow works.
 
-<img src="/spotify-auth.png"/>
+![alt](/assets/img/spotify-auth.png)
 
 What happens is:
 
- - We need a web application (can run on *localhost*) from where we will send an authentication request, using a simple HTTP *GET* method along with some credentials and a *redirect-uri* (our web application's url).
- - Spotify will prompt the user to login, and will redirect to the *redirect-uri* we passed along with an *authorization-code* within the request.
- - We exchange this code we received to a token using an HTTP *POST* request.
- - From now on, we can use the Spotify API with this token we stored. It will be valid for 3600 seconds and can be refreshed when needed.
+* We need a web application (can run on *localhost*) from where we will send an authentication request, using a simple HTTP *GET* method along with some credentials and a *redirect-uri* (our web application's url).
+* Spotify will prompt the user to login, and will redirect to the *redirect-uri* we passed along with an *authorization-code* within the request.
+* We exchange this code we received to a token using an HTTP *POST* request.
+* From now on, we can use the Spotify API with this token we stored. It will be valid for 3600 seconds and can be refreshed when needed.
 
 To do this, I used the two functions below within a Flask application.
 
@@ -208,7 +206,6 @@ My Flask application runs on ```localhost:9999```. When I registered my Spotify 
 
 Note: The few lines code I showed above is just a snippet that won't work as is since I am using classes and all. Please have a look [here](https://github.com/ericdaat/kshe-to-spotify/blob/master/flask-server/application/spotify_api.py) for the full Spotify API code, and [here](https://github.com/ericdaat/kshe-to-spotify/blob/master/flask-server/application/app.py) for the full Flask API code.
 
-
 ### Searching for songs
 
 Now that we are authenticated, let's have some fun with the Spotify Web API.
@@ -253,7 +250,6 @@ def search_track(self, track_name, artist_name, limit=1):
     }
 ```
 
-
 ### Adding songs to playlist
 
 Now we simply take all the *spotify_uri* fields from the previous json, and call the following function that will update the playlist with our new songs. Note that this won't ignore duplicates. To do so, we will need to manually filter out the tracks that are already existing within the playlist.
@@ -276,4 +272,4 @@ def add_tracks_to_playlist(self, track_uris, playlist_uri):
 
 And that's about it ! You can have a look at my Github repository for the full code. My playlist is public and available on Spotify [here](https://open.spotify.com/user/ericda/playlist/3BCcE8T945z1MnfPWkFsfX). Note that my application is not running on its own yet, which means the playlist is not uploaded regularly. I will look at it as soon as I can find some time. Meanwhile feel free to let me know if this was useful, or don't hesitate to ping me on Github if you want to help !
 
-<img src="/kshe-spotify-playlist.png"/>
+![alt](/assets/img/kshe-spotify-playlist.png)

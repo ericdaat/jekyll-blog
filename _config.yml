@@ -30,6 +30,12 @@ show_excerpts: True
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+
 twitter_username: ericdaoud
 github_username:  ericdaat
 linkedin_username: ericdaoud

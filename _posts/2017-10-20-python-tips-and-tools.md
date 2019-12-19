@@ -11,7 +11,6 @@ I love Python programming language, and I have been using it for several years n
 >*Over six years ago, in December 1989, I was looking for a "hobby" programming project that would keep me occupied during the week around Christmas. My office ... would be closed, but I had a home computer, and not much else on my hands. I decided to write an interpreter for the new scripting language I had been thinking about lately: a descendant of ABC that would appeal to Unix/C hackers. I chose Python as a working title for the project, being in a slightly irreverent mood (and a big fan of Monty Python's Flying Circus).
 > -- Guido Van Rossum, 1996*
 
-
 There are a few Python things I learnt over the years, and I decided to share them in this post. I'll cover the basis of Object Oriented Programming; then some useful functions or tools that I like about the language; finally, I'll speak about how to organise a project and install libraries with virtual environments. Before we dive in this article, let me mention a few things:
 
 1. This is absolutely not exhaustive. I am very aware that I don't know all about Python and have no legitimacy teaching it. I just wanted to share some of my favorite aspects of the language.
@@ -19,7 +18,7 @@ There are a few Python things I learnt over the years, and I decided to share th
 3. I personally started learning it by reading [Learn Python the Hard Way](https://learnpythonthehardway.org/book/)
 4. For Mac users, it is recommended to **not** use the built in macOS Python. Instead, do the following:
     - Get [Homebrew](https://brew.sh/), the missing package manager for macOS
-    - Run ``` brew install python```
+    - Run `brew install python`
 
 ## Object Oriented Programming
 
@@ -182,8 +181,9 @@ if __name__ == '__main__':
 ### Public vs. private
 
 Methods and attributes are public by default in python. Adding a `_` makes them private:
- - `self.name` vs. `self._name` for attributes
- - `def some_method(self)` vs. `def _some_method(self)` for methods
+
+- `self.name` vs. `self._name` for attributes
+- `def some_method(self)` vs. `def _some_method(self)` for methods
 
 ``` python
 class Animal(object):
@@ -208,7 +208,6 @@ You might also come accross `__do_something_private() declaration of methods. Th
 ### Accessing private attributes: getter & setter
 
 When defining private attributes, we can access them with getters, and redefine them with setters.
-
 
 ``` python
 class SomeClass(object):
@@ -402,6 +401,7 @@ assert(2<=1)     # raises AssertionError
 ```
 
 This can be useful for parameter checking:
+
 ```python
 def f(value):
     try:
@@ -417,7 +417,9 @@ if __name__ == "__main__":
 ```
 
 ### Loop statements
+
 Here are some keywords that can be used within a python loop:
+
 - `break`: terminates the current loop
 - `continue`: returns to the top of the loop, ignoring future statements
 - `pass`: when a statement is required, but we don't want to do anything
@@ -524,6 +526,7 @@ my_python_project/
 ```
 
 Within `my_python_project.__init__.py`, we write:
+
 ``` python
 from my_module import some_function
 
@@ -542,6 +545,7 @@ def some_function():
 ```
 
 ## Sublime Text
+
 I personally use Sublime Text 3 when writing python code for production. I like that it is lightweight and very extensible thanks to so many third parties packages. In the following, I share with you some of my favorite packages.
 
 ### Install Sublime Text 3 & Package Control
@@ -568,75 +572,88 @@ in all open files.
 7. [Agila Theme](https://packagecontrol.io/packages/Agila%20Theme): One theme among others
 
 ## Vim
+
 I recently switched from Sublime Text to Vim even though I don't master all the commands available. I was inspired by my coworker at ManoMano [Francois](https://choiz.fr) who taught me a lot about Vim, what configuration I should have, and which plugins I should install. I forked his configuration [repository](https://github.com/ChoiZ/Micro-Vim-config) and added my own plugins and preferences. You can find my repository [here](https://github.com/ericdaat/Micro-Vim-Config).
 
 ## Virtual Environments
+
 ### What is it ?
 
 From [virtualenv documentation](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/):
 > A Virtual Environment is a tool to keep the dependencies required by different projects in separate places, by creating virtual Python environments for them. It solves the “Project X depends on version 1.x but, Project Y needs 4.x” dilemma, and keeps your global site-packages directory clean and manageable.
 
 You should never **sudo** pip install something:
+
 ``` bash
-$ sudo pip install whatever                     # bad
+sudo pip install whatever                     # bad
 ```
 
 Instead, pip install any library you want **inside** a virtualenv:
+
 ``` bash
-$ (your-virtualenv) pip install whatever        # good
+(your-virtualenv) pip install whatever        # good
 ```
 
 ### Getting started
 
 Install virtualenv with pip
+
 ``` bash
-$ pip install virtualenv  # you may need sudo
+pip install virtualenv  # you may need sudo
 ```
 
 Create a virtualenv somewhere in your file system:
+
 ``` bash
-$ virtualenv your-virtualenv  # will create a your-virtualenv folder
+virtualenv your-virtualenv  # will create a your-virtualenv folder
 ```
 
 Activate it:
+
 ``` bash
-$ source your-virtualenv/bin/activate
-$ (your-virtualenv) pip list # check what's inside
+source your-virtualenv/bin/activate
+(your-virtualenv) pip list # check what's inside
 ```
 
 You're free ! Install whatever you want !
 
 ``` bash
-$ (your-virtualenv) pip install pandas
+(your-virtualenv) pip install pandas
 ```
 
 ### It gets better
 
 You can use whatever python you want !
+
 ```shell
-$ virtualenv your-virtualenv -p python3
+virtualenv your-virtualenv -p python3
 ```
 
 Export all you pip libraries to a .txt file:
+
 ```shell
-$ (your-virtualenv) pip freeze > requirements.txt
+(your-virtualenv) pip freeze > requirements.txt
 ```
 
 Install back your pip libraries in another virtualenv:
+
 ```shell
-$ (your-virtualenv2) pip install -r requirements.txt
+(your-virtualenv2) pip install -r requirements.txt
 ```
 
 ## Writing Beautiful Python
+
 ### PEP 8
 
 A guide written by Guido van Rossum, Barray Warsaw and Nick Coghlan for defining naming and formatting conventions accross all python scripts.
 
 Taken from [python.org](https://www.python.org/dev/peps/pep-0008/):
-- [Code layout](https://www.python.org/dev/peps/pep-0008/#code-lay-out)
-- [Naming conventions](https://www.python.org/dev/peps/pep-0008/#naming-conventions)
+
+* [Code layout](https://www.python.org/dev/peps/pep-0008/#code-lay-out)
+* [Naming conventions](https://www.python.org/dev/peps/pep-0008/#naming-conventions)
 
 ## Thank you
+
 That's it ! I hope this post made sense and helped you a little ! Have fun progamming in this beautiful language that is Python.
 
 <iframe src="https://giphy.com/embed/ZVik7pBtu9dNS" width="480" height="268" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/life-interesting-footage-ZVik7pBtu9dNS">via GIPHY</a></p>

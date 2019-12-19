@@ -11,8 +11,8 @@ excerpt:
 First, download the dataset from the [Yelp website](https://www.yelp.com/dataset/challenge). Once you're done, we are going to work with the the reviews file. It contains one Json per row, and I like to use the [Python Pandas](https://pandas.pydata.org/) library to read datasets.
 Pandas has a nice function called `read_json` that we are going to use for reading the dataset. However we have to be careful of two things:
 
- - The dataset is really large, so we don't want to fully load it in RAM
- - It's not really a Json file, it has one Json per line
+* The dataset is really large, so we don't want to fully load it in RAM
+* It's not really a Json file, it has one Json per line
 
 Thankfully, Pandas is so awesome that it provides everything we need to address these two issues. We are going to use `chunksize` to tell pandas to load the file chunk by chunk, and `lines=True` to tell Pandas that the file is not one full json but multiple json rows.
 
@@ -28,8 +28,8 @@ The `dfs` variable is a generator, on which we will iterate to get the Dataframe
 
 We are mainly interested in two columns from this dataframe:
 
- - *text*: The text from the user review.
- - *stars*: How many stars did the user give.
+* *text*: The text from the user review.
+* *stars*: How many stars did the user give.
 
 We will simply do a binary classification, and predict whether the review was positive or negative. For this, we take the assumption that a positive review has a rating greater than 3. We can create a new column called *sentiment* with the following code:
 
