@@ -4,6 +4,7 @@ title: Some Keras snippets
 date: 2017-12-16
 excerpt:
     I started to use Keras for Deep Learning months ago, and as I was using it, I thought I should make a memo of all the cool features and network architectures I was using. This post aims at sharing some snippets I have found useful, so I can reuse them later. Maybe it will be useful to you as well !
+cover: network.jpg
 ---
 
 I started to use Keras for Deep Learning months ago, and as I was using it, I thought I should make a memo of all the cool features and network architectures I was using. This post aims at sharing some snippets I have found useful, so I can reuse them later. Maybe it will be useful to you as well !
@@ -36,7 +37,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![regression](/assets/img/keras_nn/regression.png)
+![regression](/assets/img/articles/keras_nn/regression.png)
 
 
 ### Binary Classification
@@ -63,7 +64,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![binary](/assets/img/keras_nn/binary_classifier.png)
+![binary](/assets/img/articles/keras_nn/binary_classifier.png)
 
 ### Multiclass Classification
 
@@ -92,7 +93,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![multiclass](/assets/img/keras_nn/multiclass_classifier.png)
+![multiclass](/assets/img/articles/keras_nn/multiclass_classifier.png)
 
 ### Embeddings
 
@@ -125,7 +126,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![embeddings](/assets/img/keras_nn/embeddings_classifier.png)
+![embeddings](/assets/img/articles/keras_nn/embeddings_classifier.png)
 
 ### Embeddings with the functional API
 
@@ -156,7 +157,7 @@ model.fit(X, y, epochs=5)
 model.predict(np.random.rand(1, 10))
 ```
 
-![embeddings_functional](/assets/img/keras_nn/embeddings_classifier_functional.png)
+![embeddings_functional](/assets/img/articles/keras_nn/embeddings_classifier_functional.png)
 
 ### Handling multiple inputs
 
@@ -197,7 +198,7 @@ model.predict([np.random.rand(1, 10),
                np.random.rand(1, 10)])
 ```
 
-![embeddings_functional](/assets/img/keras_nn/multi_embeddings_classifier_functional.png)
+![embeddings_functional](/assets/img/articles/keras_nn/multi_embeddings_classifier_functional.png)
 
 ### Shared Embeddings
 
@@ -235,7 +236,7 @@ model.compile('sgd', 'sparse_categorical_crossentropy')
 plot_model(model, to_file='shared_embeddings_averaged_dot.png', show_shapes=True)
 ```
 
-![shared_embeddings](/assets/img/keras_nn/shared_embeddings.png)
+![shared_embeddings](/assets/img/articles/keras_nn/shared_embeddings.png)
 
 ## Callbacks
 

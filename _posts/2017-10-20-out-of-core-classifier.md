@@ -4,6 +4,7 @@ title: Out of core text classification with Scikit Learn
 date: 2018-02-02
 excerpt:
     In this article, we are going to demonstrate how to build a simple text classifier for larger than RAM datasets. This approach is called Out of Core Learning, and many python Machine Learning librairies make this very easy to implement. For this example I used reviews from the Yelp Dataset Challenge and Python scikit-learn.
+cover: books.jpg
 ---
 
 ## The Dataset

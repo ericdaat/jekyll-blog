@@ -4,6 +4,7 @@ title: An introduction to Git
 date: 2017-10-20
 excerpt:
     A short introduction and tutorial to Git, the versionning tool created by Linus Torvalds.
+cover: tree.jpg
 ---
 
 ## Some History
@@ -127,7 +128,7 @@ git checkout hi.py
 
 ### A visual recap
 
-![git_basic_usage](/assets/img/git-stages.png)
+![git_basic_usage](/assets/img/articles/git/git-stages.png)
 
 *Source: [marklodato.github.io](https://marklodato.github.io/visual-git-guide/index-en.html)*
 
@@ -139,7 +140,7 @@ git checkout hi.py
 
 Co-workers work on the same project and can edit the same files simultaneously. Updates are pushed on the distant repository, and pulled from the production server.
 
-![git_servers](/assets/img/git-servers.png)
+![git_servers](/assets/img/articles/git/git-servers.png)
 
 NEVER EVER commit, push or edit anything on the production server.
 
@@ -147,7 +148,7 @@ NEVER EVER commit, push or edit anything on the production server.
 
 Branches allow people to work on separate tasks without messing with the master branch code. It is useful to experiment, or add functionalities. Branches can start from the master branch, or from another branch.
 
-![git_branches](/assets/img/git-branches.png)
+![git_branches](/assets/img/articles/git/git-branches.png)
 
 *Source : [backlogtool.com](https://backlogtool.com/git-tutorial/en/stepup/stepup1_5.html)*
 
@@ -198,8 +199,6 @@ git push origin awesome-feature # now the world really is a better place
 ```
 
 ### Ignore unnecessary files
-
-> *You can't always git what you want -- The Rolling Stones*
 
 Please never add anything other than code/configuration files in a git repository. This is not Google Drive.
 

@@ -2,6 +2,7 @@
 layout: page
 title: Open Source
 permalink: /open-source/
+cover: open.jpg
 ---
 
 Here are some open source projects I am working on.

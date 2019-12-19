@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+cover: desk.jpg
 ---
 
 Hi there! I am Eric, a Data Scientist and Full Stack Developer from France.
