@@ -3,6 +3,7 @@ layout: page
 title: Research
 permalink: /research
 cover: research.jpg
+in_navbar: True
 ---
 
 Late 2019, I started a PhD in Machine Learning applied to cancerology at the

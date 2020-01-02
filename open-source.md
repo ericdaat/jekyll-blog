@@ -3,6 +3,7 @@ layout: page
 title: Open Source
 permalink: /open-source
 cover: open.jpg
+in_navbar: True
 ---
 
 ## Projects

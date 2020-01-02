@@ -3,6 +3,7 @@ layout: page
 title: Music
 permalink: /music
 cover: music.jpg
+in_navbar: True
 ---
 
 I started playing the guitar in 2004. I started by playing Blues, Classic Rock

@@ -3,6 +3,7 @@ layout: page
 title: Photography
 permalink: /photography
 cover: camera.jpg
+in_navbar: True
 ---
 
 I have been keen on photography since 2010. Here are some of my favorite shots.
