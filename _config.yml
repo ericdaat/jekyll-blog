@@ -46,6 +46,8 @@ social:
     - https://www.linkedin.com/in/ericdaoud
     - https://github.com/ericdaat
 
+permalink: /blog/:year/:month/:day/:title/
+
 # Build settings
 theme: minima
 plugins:
